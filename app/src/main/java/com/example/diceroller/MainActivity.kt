@@ -58,6 +58,18 @@ fun DiceRollerApp() {
 
 }
 
+
+@Composable
+fun GhostPic(){
+    Image(
+        painter = painterResource(R.drawable.ghost),
+        contentDescription = "Ghost",
+        modifier = Modifier
+            .height(100.dp)
+            .padding(.8.dp)
+    )
+}
+
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     var result by remember { mutableStateOf(1) }
@@ -77,6 +89,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        GhostPic()
         Text(
             text = "Nick Kovalchik Dice Roll",
             color = Color.Blue
